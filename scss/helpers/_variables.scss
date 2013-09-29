@@ -3,8 +3,8 @@
  */
 
 // Fonts
-$font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-key: Georgia, 'Times New Roman' serif;
+$font-main: sans-serif;
+$font-key: $font-main;
 
 // <hr> color
 $hr-color: #ccc;
@@ -14,3 +14,6 @@ $selection-color: #b3d4fc;
 
 // Text Color
 $main-color: #222;
+
+// Accent color
+$accent: #0084C0;

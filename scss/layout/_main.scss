@@ -1,3 +1,6 @@
 /**
  * All styles related to markup inside the main element
  */
+.site-content {
+	@extend %center-content;
+}

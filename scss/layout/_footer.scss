@@ -1,3 +1,49 @@
 /**
  * All styles related to markup inside the footer
  */
+.site-footer {
+	@include x-rem(font-size, 0.8);
+
+	background: #272729;
+	color: #fff;
+	text-align: center;
+
+	a {
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.footer-container {
+	@extend %center-content;
+}
+
+/*
+ * List of maintainers in footer
+ */
+.maintainers {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+	> li {
+		@include x-rem(margin, 0 1);
+
+		display: inline-block;
+	}
+
+	a {
+		@include x-rem(margin, 0.5 0);
+
+		display: block;
+	}
+
+	img {
+		width: 73px;
+		height: 73px;
+		border-radius: 50%;
+	}
+}
