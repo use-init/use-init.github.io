@@ -1,9 +1,9 @@
 {
-  "name": "init",
-  "title": "init",
-  "description": "This is an initial boilerplate for front-end projects",
-  "version": "1.0.0",
-  "homepage": "https://github.com/drublic/init",
+  "name": "init-website",
+  "title": "init-website",
+  "description": "The website for INIT",
+  "version": "0.1.0",
+  "homepage": "https://drublic.github.io/init",
   "repository": {
     "type": "git",
     "url": "git://github.com/drublic/init.git"

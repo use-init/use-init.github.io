@@ -3,13 +3,15 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Hans Christian Reinl -- Development -- @drublic
 
 # THANKS
 
-    <name>
+    Jan von Beckerath at NIMIUS and Stefan Nitzsche for the INIT logo
+    Nicki Uhlbach for the initial design
 
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
     Normalize.css, jQuery, Modernizr
+    GruntJS
