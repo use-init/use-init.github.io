@@ -46,10 +46,6 @@ var config = {
 	img: {
 		src: 'img/',
 		dest: 'dist/img/'
-	},
-
-	tests: {
-		src: 'tests/**/*spec.js'
 	}
 };
 
@@ -166,49 +162,11 @@ module.exports = function (grunt) {
 
 		// Server config
 		connect: {
-			test: {
-				port: 8000
-			},
 
 			server: {
 				options: {
 					port: 9001,
 					keepalive: true
-				}
-			}
-		},
-
-		// Configuration for Karma test-runner
-		karma: {
-			options: {
-				configFile: 'karma.conf.js',
-
-				proxies: {
-					'/base': 'http://localhost:<%= connect.test.port %>'
-				}
-			},
-
-			test: {
-				options: {
-
-					// Start these browsers
-					browsers: ['Chrome', 'Firefox', 'Safari', 'PhantomJS'],
-
-					plugins: [
-						'karma-jasmine',
-						'karma-chrome-launcher',
-						'karma-firefox-launcher',
-						'karma-safari-launcher',
-						'karma-phantomjs-launcher'
-					]
-				}
-			},
-
-			unit: {
-				options: {
-
-					// Use Phantom and Firefox for Travis
-					browsers: ['PhantomJS', 'Firefox']
 				}
 			}
 		},
@@ -221,20 +179,15 @@ module.exports = function (grunt) {
 
 			js: {
 				files: config.jsHintFiles,
-				tasks: ['jshint', 'connect:test', 'karma:unit']
-			},
-
-			karma: {
-				files: [config.jsHintFiles, config.tests.src],
-				tasks: ['connect:test', 'karma:unit']
+				tasks: ['jshint']
 			}
 		},
 
 		// Setup concurrent tasks
 		concurrent: {
 			deploy1: ['jshint', 'modernizr', 'sass:deploy', 'imagemin', 'copy'],
-			deploy2: ['requirejs', 'connect:test', 'karma:unit'],
-			dev1: ['jshint', 'connect:test', 'karma:test', 'sass:dev', 'copy'],
+			deploy2: ['requirejs'],
+			dev1: ['jshint', 'sass:dev', 'copy'],
 			dev2: ['requirejs']
 		}
 	});
@@ -250,8 +203,4 @@ module.exports = function (grunt) {
 
 	// Default task
 	grunt.registerTask('default', ['dev']);
-
-	// Travis CI task
-	grunt.registerTask('travis', ['jshint', 'connect:test', 'karma:unit']);
-
 };
