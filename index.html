@@ -1,61 +1,131 @@
 <!DOCTYPE html>
-<!--[if lt IE 8]>      <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js">
 	<head>
 		<meta charset="utf-8">
 
-		<title></title>
-		<meta name="description" content="">
+		<title>INIT &bull; An initial boilerplate for front-end projects</title>
+		<meta name="description" content="Init is an initial boilerplate for
+				front-end projects which adds more complexity to your
+				application.">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
 		<link rel="stylesheet" href="css/main.css">
+
+		<script>
+			// Add main element to HTML5 Shiv
+			window.html5 = {
+				elements: 'abbr article aside audio bdi canvas data datalist details dialog ' +
+						'figcaption figure footer header hgroup main mark meter nav output progress ' +
+						'section summary template time video'
+			};
+		</script>
 		<script src="components/modernizr/modernizr.js"></script>
 	</head>
 	<body>
-		<!--[if lt IE 7]>
+		<!--[if lt IE 8]>
 			<p class="browsehappy">You are using an <strong>outdated</strong>
 				browser. Please
 				<a href="http://browsehappy.com/">upgrade your browser</a> to
 				improve your experience.</p>
 		<![endif]-->
 
-		<!-- Add your site or application content here -->
-		<header>
-			<h1 role="banner">init</h1>
+		<!-- The fixed header -->
+		<header class="site-header">
+			<h1 class="site-logo" role="banner">INIT</h1>
 
-			<nav role="navigation">
+			<nav class="site-navigation" role="navigation">
 				<ul>
-					<li></li>
-					<li></li>
-					<li></li>
+					<li><a href="#getting-started">Getting Started</a></li>
+					<li><a href="https://github.com/drublic/init/tree/master/doc">Documentation</a></li>
+					<li><a href="https://github.com/drublic/init">The Code</a></li>
 				</ul>
 			</nav>
 		</header>
 
-		<main role="main">
-			<p>Hello world! This is init.</p>
-			<p>init is an HTML-framework based on HTML5 Boilerplate adding more
-				flexibility and an automation process to it. It requires you to
-				work with grunt, Sass, requireJS, bower. You can find more
-				information about the usage in the documentation found in the
-				<a href="https://github.com/drublic/init/tree/master/doc"><code>doc/</code></a>
-				folder.</p>
+		<!-- Main Content area -->
+		<main role="main" class="site-content">
+			<section class="hero"><!-- A slider, maybe --></section>
+
+			<section id="download">
+				<p>
+					<a href="https://github.com/drublic/init/zipball/v1.0.0"
+							class="download">Download v1.0.0</a><br>
+					<a href="https://github.com/drublic/init/blob/master/CHANGELOG.md"
+							class="changelog">View Changelog</a>
+				</p>
+				<p>
+					<a href="https://twitter.com/share"
+						class="twitter-share-button"
+						data-count="none"
+						data-size="large">Tweet</a>
+				</p>
+			</section>
+
+			<section class="on-github">
+				<p>
+					<a href="https://github.com/drublic/init"><i class="icon-github">GitHub</i></a>
+					This project is <a href="https://github.com/drublic/init">on GitHub</a>. Go fork it.
+				</p>
+			</section>
+
+			<section id="why-init">
+				<h2>Why INIT?</h2>
+			</section>
+
+			<section id="getting-started">
+				<h2>Getting Started</h2>
+			</section>
 		</main>
 
-		<footer>
-			<p>You can find this
-				<a href="https://github.com/drublic/init">project and its
-				documentation on github</a>,
-				<a href="https://github.com/drublic/init/issues/">file bugs</a>
-				and <a href="https://github.com/drublic/init/blob/master/LICENSE.md">read
-				the license information</a>.</p>
+		<!-- Some site-information -->
+		<footer class="site-footer">
+			<p>INIT is a project by</p>
+
+			<ul class="maintainers">
+				<li>
+					<a href="https://twitter.com/drublic"
+							title="Follow @drublic on Twitter">
+						<img src="https://twitter.com/api/users/profile_image/drublic?size=bigger">
+					</a>
+					<a href="http://drublic.de/">Hans Christian Reinl</a>
+
+					<a href="https://twitter.com/drublic"
+							class="twitter-follow-button"
+							data-show-count="false"
+							data-size="large">Follow @drublic</a>
+				</li>
+				<li>
+					<a href="https://twitter.com/helloanselm"
+							title="Follow @helloanselm on Twitter">
+						<img src="https://twitter.com/api/users/profile_image/helloanselm?size=bigger">
+					</a>
+					<a href="http://helloanselm.de/">Anselm Hannemann</a>
+
+					<a href="https://twitter.com/helloanselm"
+							class="twitter-follow-button"
+							data-show-count="false"
+							data-size="large">Follow @helloanselm</a>
+				</li>
+			</ul>
+
+			<p>
+				and <a href="https://github.com/drublic/init/graphs/contributors">other
+				contributors</a>.
+				<a href="https://github.com/drublic/init/tree/master/CONTRIBUTING.md">Get
+				involved</a>.
+			</p>
+
+			<p>
+				This project is under
+				<a href="https://github.com/drublic/init/tree/master/LICENSE.md">MIT
+				License</a>.
+			</p>
 		</footer>
 
 		<!-- Add RequireJS -->
 		<script data-main="js/config" src="components/requirejs/require.js"></script>
+
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 		<script>
