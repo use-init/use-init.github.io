@@ -9,8 +9,6 @@ var config = {
 
 	destDir: 'dist/',
 
-	requirejs: '../components/requirejs/require',
-
 	// All files that should be checked with JSHint
 	jsHintFiles: [
 		'Gruntfile.js',
@@ -115,27 +113,6 @@ module.exports = function (grunt) {
 			}
 		},
 
-		requirejs: {
-			compile: {
-				options: {
-					mainConfigFile: config.js.config,
-					include: [config.requirejs],
-					out: config.js.dest,
-
-					// Wrap in IIFE
-					wrap: true,
-
-					// Source Maps
-					generateSourceMaps: true,
-
-					// Do not preserve license comments when working with source maps, incompatible.
-					preserveLicenseComments: false,
-
-					optimize: 'uglify2'
-				}
-			}
-		},
-
 		copy: {
 			deploy: {
 				files: [{
@@ -186,9 +163,7 @@ module.exports = function (grunt) {
 		// Setup concurrent tasks
 		concurrent: {
 			deploy1: ['jshint', 'modernizr', 'sass:deploy', 'imagemin', 'copy'],
-			deploy2: ['requirejs'],
 			dev1: ['jshint', 'sass:dev', 'copy'],
-			dev2: ['requirejs']
 		}
 	});
 
@@ -196,10 +171,10 @@ module.exports = function (grunt) {
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
 	// A task for development
-	grunt.registerTask('dev', ['concurrent:dev1', 'concurrent:dev2']);
+	grunt.registerTask('dev', ['concurrent:dev1']);
 
 	// A task for deployment
-	grunt.registerTask('deploy', ['concurrent:deploy1', 'concurrent:deploy2']);
+	grunt.registerTask('deploy', ['concurrent:deploy1']);
 
 	// Default task
 	grunt.registerTask('default', ['dev']);

@@ -12,12 +12,6 @@
     "url": "https://github.com/drublic/init/issues"
   },
   "license": "MIT",
-  "scripts": {
-    "test": "grunt travis --verbose"
-  },
-  "engines": {
-    "node": ">=0.10"
-  },
   "dependencies": {},
   "devDependencies": {
     "matchdep": "0.1.2",
@@ -27,10 +21,9 @@
     "grunt-contrib-copy": "0.4.1",
     "grunt-contrib-imagemin": "~0.3.0",
     "grunt-contrib-jshint": "0.6.3",
-    "grunt-contrib-requirejs": "0.4.1",
     "grunt-contrib-sass": "0.4.1",
     "grunt-contrib-watch": "0.5.1",
-    "grunt-modernizr": "0.3.0",
+    "grunt-modernizr": "0.3.0"
   },
   "keywords": []
 }
