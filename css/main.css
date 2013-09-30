@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*
+/*!
  * The styles for INIT's website
  *
  * @author Hans Christian Reinl
@@ -9,7 +9,7 @@
 /**
  * Variables to be used throughout the project
  */
-/* sass-mixins - v0.5.0 - 2013-09-29 */
+/*! sass-mixins - v0.5.0 - 2013-09-29 */
                                        /**
 * @description
 * Generates keyframe animations
@@ -993,6 +993,31 @@ a:visited {
 /**
  * All styles related to markup inside the main element
  */
+#download > p {
+  text-align: center;
+}
+
+.download,
+.changelog {
+  min-width: 120px;
+  min-width: 7.5rem;
+  margin: 1.6px 0;
+  margin: 0.1rem 0;
+  padding: 8px 16px;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+}
+
+.download {
+  background: #0084c0;
+}
+
+.changelog {
+  background: #222222;
+}
+
 /**
  * All styles related to markup inside the footer
  */

@@ -4,3 +4,26 @@
 .site-content {
 	@extend %center-content;
 }
+
+#download > p {
+	text-align: center;
+}
+
+.download,
+.changelog {
+	@include x-rem(min-width, 7.5);
+	@include x-rem(margin, 0.1 0);
+	@include x-rem(padding, 0.5 1);
+
+	display: inline-block;
+	color: white;
+	text-decoration: none;
+}
+
+.download {
+	background: $accent;
+}
+
+.changelog {
+	background: $main-color;
+}
