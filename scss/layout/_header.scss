@@ -2,9 +2,17 @@
  * All styles related to markup inside the header
  */
 .site-header {
-	@extend %center-content;
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	right: 0;
 
 	overflow: hidden;
+
+	background: #fff;
+	background: rgba(255, 255, 255, 0.9);
+	border-bottom: 1px solid rgba($accent, 0.1);
 }
 
 /*
@@ -15,6 +23,7 @@
 	margin: 0;
 
 	> a {
+		@extend %ir;
 		@include x-rem(width, 9);
 		@include x-rem(height, 5);
 
@@ -22,9 +31,6 @@
 
 		background: url(../img/logo.svg) no-repeat;
 		background-size: contain;
-
-		text-indent: -99em;
-		overflow: hidden;
 	}
 }
 

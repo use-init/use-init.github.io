@@ -6,17 +6,17 @@
  * Image replacement
  */
 
-.ir {
+%ir {
 	background-color: transparent;
 	border: 0;
 	overflow: hidden;
-}
 
-.ir:before {
-	content: "";
-	display: block;
-	width: 0;
-	height: 150%;
+	&:before {
+		content: "";
+		display: block;
+		width: 0;
+		height: 150%;
+	}
 }
 
 /*
@@ -98,4 +98,23 @@
 	@include x-rem(max-width, 50);
 
 	margin: 0 auto;
+}
+
+
+/*
+ * Button
+ */
+%button {
+
+	display: inline-block;
+	padding: 0.5em 1em;
+	background: $accent;
+	border-radius: 0.25em;
+
+	color: #fff;
+	text-decoration: none;
+
+	&:visited {
+		color: #fff;
+	}
 }

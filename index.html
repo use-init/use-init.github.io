@@ -31,44 +31,51 @@
 
 		<!-- The fixed header -->
 		<header class="site-header">
-			<h1 class="site-logo" role="banner"><a href="#">INIT</a></h1>
+			<div class="container">
+				<h1 class="site-logo" role="banner"><a href="#">INIT</a></h1>
 
-			<nav class="site-navigation" role="navigation">
-				<ul>
-					<li><a href="#getting-started">Getting Started</a></li>
-					<li><a href="https://github.com/drublic/init/tree/master/doc">Documentation</a></li>
-					<li><a href="https://github.com/drublic/init">The Code</a></li>
-				</ul>
-			</nav>
+				<nav class="site-navigation" role="navigation">
+					<ul>
+						<li><a href="#getting-started">Getting Started</a></li>
+						<li><a href="https://github.com/drublic/init/tree/master/doc">Documentation</a></li>
+						<li><a href="https://github.com/drublic/init">The Code</a></li>
+					</ul>
+				</nav>
+			</div>
 		</header>
 
 		<!-- Main Content area -->
 		<main role="main" class="site-content">
-			<section class="hero"><!-- A slider, maybe --></section>
-
-			<section id="download">
-				<p>
-					<a href="https://github.com/drublic/init/zipball/v1.0.0"
-							class="download">Download v1.0.0</a><br>
-					<a href="https://github.com/drublic/init/blob/master/CHANGELOG.md"
-							class="changelog">View Changelog</a>
-				</p>
-				<p>
-					<a href="https://twitter.com/share"
-						class="twitter-share-button"
-						data-count="none"
-						data-size="large">Tweet</a>
-				</p>
+			<section class="hero">
+				<div class="container">
+					<p>INIT is based upon <a href="http://html5boilerplate.com/">HTML5 Boilerplate</A> and adds more structure for SCSS files, JavaScripts, includes build tasks and a whole lot more.</p>
+				</div>
+				<!-- A slider, maybe -->
 			</section>
 
-			<section class="on-github">
-				<p>
-					<a href="https://github.com/drublic/init"><i class="icon-github">GitHub</i></a>
-					This project is <a href="https://github.com/drublic/init">on GitHub</a>. Go fork it.
-				</p>
+			<section id="download" class="download">
+				<div class="container">
+					<p>
+						<a href="https://github.com/drublic/init/zipball/v1.0.0"
+								class="download-link">Download v1.0.0</a><br>
+						<a href="https://github.com/drublic/init/blob/master/CHANGELOG.md"
+								class="download-changelog">View Changelog</a>
+					</p>
+					<p>
+						<a href="https://twitter.com/share"
+							class="twitter-share-button"
+							data-count="none"
+							data-size="large">Tweet</a>
+					</p>
+
+					<p class="download-github">
+						<a href="https://github.com/drublic/init"><i class="icon-github">GitHub</i></a>
+						This project is <a href="https://github.com/drublic/init">on GitHub</a>. Go fork it.
+					</p>
+				</div>
 			</section>
 
-			<section id="why-init">
+			<section id="why-init" class="why">
 				<h2>Why INIT?</h2>
 
 				<ul>
@@ -93,8 +100,9 @@
 
 			</section>
 
-			<section id="getting-started">
+			<section id="getting-started" class="starting">
 				<h2>Getting Started</h2>
+
 				<p>The easiest way to set up INIT<sup><a href="#sup1">*</a></sup></p>
 
 				<pre><code>
@@ -102,6 +110,19 @@ $ git clone git@github.com:drublic/init.git
 $ npm install -g grunt-cli
 $ npm install && bower install
 				</code></pre>
+
+				<p>This will install all the things you need for running the
+				grunt-tasks automatically.</p>
+
+				<p>Also it will create a folder `components` which holds all
+					vendor dependencies managed by Bower.</p>
+
+				<h3>Troubleshooting</h3>
+
+				<p>If running the install does not work, please try running it
+					as with admin-rights:</p>
+
+				<pre>$ sudo npm install -g grunt-cli</pre>
 
 				<p>Now you can start developing your site. Therefore use the GruntJS task:</p>
 
@@ -115,13 +136,26 @@ $ grunt
 $ grunt watch
 				</code></pre>
 
+				<h2>Structure</h2>
+
+				<p>INIT's structure isn’t hard to understand. Please refer to
+					<a href="https://github.com/drublic/init/tree/master/doc/structure">the
+					documentation</a> to get to know the details.</p>
+
 				<p><small><a id="sup1">*</a>You need to have a running <a href="http://nodejs.org/">node.js</a> and <a href="https://www.ruby-lang.org/en/">ruby</a> along with <a href="https://npmjs.org/">npm</a>, <a href="http://sass-lang.com/">Sass</a> and <a href="http://bower.io/">bower</a>. Please install this before setting up INIT in your project's directory.</small></p>
+
 			</section>
+
+			<section id="credits" class="credits">
+				<h2>Credits</h2>
+				<p>The INIT logo was designed by Jan von Beckerath at <a href="http://nimius.net/">NIMIUS</a> and optimized by <a href="http://www.stn.my/">Stefan Nitzsche</a>.
+			</section>
+
 		</main>
 
 		<!-- Some site-information -->
 		<footer class="site-footer">
-			<div class="footer-container">
+			<div class="container">
 				<p>INIT is a project by</p>
 
 				<ul class="maintainers">

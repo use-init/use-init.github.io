@@ -1,29 +1,101 @@
 /**
  * All styles related to markup inside the main element
  */
-.site-content {
+.container {
 	@extend %center-content;
 }
 
-#download > p {
+.site-content {
+	@include x-rem(margin-top, 6.4);
+}
+
+
+/*
+ * Hero Unit
+ */
+.hero {
+	background: url(../img/background.svg) center center;
+	background-size: 60%;
+
+	.container {
+		@extend %center-content;
+
+		position: relative;
+
+		&:before {
+			content: '';
+			display: block;
+			width: 0;
+			padding-top: 56.25%;
+		}
+
+		> * {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+}
+
+/*
+ * Download
+ */
+.download {
+	background: #e0e7f0;
+	border-top: 1px solid rgba($accent, 0.3);
+	box-shadow: inset 0 1px 2px #fff;
 	text-align: center;
 }
 
-.download,
-.changelog {
-	@include x-rem(min-width, 7.5);
-	@include x-rem(margin, 0.1 0);
-	@include x-rem(padding, 0.5 1);
+.download-link {
+	@extend %button;
+	@include x-rem(font-size, 1.6);
+}
+
+.download-changelog {
+	@include x-rem(padding, 0.5);
+	@include x-rem(font-size, 0.8);
 
 	display: inline-block;
-	color: white;
-	text-decoration: none;
 }
 
-.download {
-	background: $accent;
+.download-github {
+	@include x-rem(padding, 0.5);
+
+	margin: 0;
+
+	.icon-github {
+		@extend %ir;
+
+		@include x-rem(width, 2);
+		@include x-rem(height, 2);
+		@include x-rem(margin-right, 0.5);
+		@include x-rem(margin-bottom, -0.5);
+
+		display: inline-block;
+		background: url(../img/github.svg) no-repeat;
+		background-size: contain;
+	}
 }
 
-.changelog {
-	background: $main-color;
+
+/*
+ * Why Init
+ */
+.why {
+	@extend %center-content;
+}
+
+/*
+ * Getting Started
+ */
+.starting {
+	@extend %center-content;
+}
+
+/*
+ * Credits
+ */
+.credits {
+	@extend %center-content;
 }

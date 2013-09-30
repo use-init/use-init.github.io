@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*!
+/*
  * The styles for INIT's website
  *
  * @author Hans Christian Reinl
@@ -9,7 +9,7 @@
 /**
  * Variables to be used throughout the project
  */
-/*! sass-mixins - v0.5.0 - 2013-09-29 */
+/* sass-mixins - v0.5.0 - 2013-09-29 */
                                        /**
 * @description
 * Generates keyframe animations
@@ -758,13 +758,12 @@ table {
 /*
  * Image replacement
  */
-.ir {
+.site-logo > a, .download-github .icon-github {
   background-color: transparent;
   border: 0;
   overflow: hidden;
 }
-
-.ir:before {
+.site-logo > a:before, .download-github .icon-github:before {
   content: "";
   display: block;
   width: 0;
@@ -840,12 +839,27 @@ table {
 /*
  * Placeholder to center content
  */
-.site-header, .site-content, .footer-container {
+.container, .hero .container, .why, .starting, .credits {
   padding: 16px 32px;
   padding: 1rem 2rem;
   max-width: 800px;
   max-width: 50rem;
   margin: 0 auto;
+}
+
+/*
+ * Button
+ */
+.download-link {
+  display: inline-block;
+  padding: 0.5em 1em;
+  background: #0084c0;
+  border-radius: 0.25em;
+  color: #fff;
+  text-decoration: none;
+}
+.download-link:visited {
+  color: #fff;
 }
 
 /*
@@ -945,7 +959,15 @@ a:visited {
  * All styles related to markup inside the header
  */
 .site-header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
   overflow: hidden;
+  background: #fff;
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(0, 132, 192, 0.1);
 }
 
 /*
@@ -963,8 +985,6 @@ a:visited {
   display: block;
   background: url(../img/logo.svg) no-repeat;
   background-size: contain;
-  text-indent: -99em;
-  overflow: hidden;
 }
 
 /*
@@ -993,31 +1013,84 @@ a:visited {
 /**
  * All styles related to markup inside the main element
  */
-#download > p {
+.site-content {
+  margin-top: 102.4px;
+  margin-top: 6.4rem;
+}
+
+/*
+ * Hero Unit
+ */
+.hero {
+  background: url(../img/background.svg) center center;
+  background-size: 60%;
+}
+.hero .container {
+  position: relative;
+}
+.hero .container:before {
+  content: '';
+  display: block;
+  width: 0;
+  padding-top: 56.25%;
+}
+.hero .container > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*
+ * Download
+ */
+.download {
+  background: #e0e7f0;
+  border-top: 1px solid rgba(0, 132, 192, 0.3);
+  box-shadow: inset 0 1px 2px #fff;
   text-align: center;
 }
 
-.download,
-.changelog {
-  min-width: 120px;
-  min-width: 7.5rem;
-  margin: 1.6px 0;
-  margin: 0.1rem 0;
-  padding: 8px 16px;
-  padding: 0.5rem 1rem;
+.download-link {
+  font-size: 25.6px;
+  font-size: 1.6rem;
+}
+
+.download-changelog {
+  padding: 8px;
+  padding: 0.5rem;
+  font-size: 12.8px;
+  font-size: 0.8rem;
   display: inline-block;
-  color: white;
-  text-decoration: none;
 }
 
-.download {
-  background: #0084c0;
+.download-github {
+  padding: 8px;
+  padding: 0.5rem;
+  margin: 0;
+}
+.download-github .icon-github {
+  width: 32px;
+  width: 2rem;
+  height: 32px;
+  height: 2rem;
+  margin-right: 8px;
+  margin-right: 0.5rem;
+  margin-bottom: -8px;
+  margin-bottom: -0.5rem;
+  display: inline-block;
+  background: url(../img/github.svg) no-repeat;
+  background-size: contain;
 }
 
-.changelog {
-  background: #222222;
-}
-
+/*
+ * Why Init
+ */
+/*
+ * Getting Started
+ */
+/*
+ * Credits
+ */
 /**
  * All styles related to markup inside the footer
  */
