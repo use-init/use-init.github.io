@@ -1043,6 +1043,12 @@ a:visited {
   top: 0;
   left: 0;
 }
+.hero .container > p {
+  font-size: 32px;
+  font-size: 2rem;
+  margin: 80px 40px 0 32px;
+  margin: 5rem 2.5rem 0 2rem;
+}
 
 /*
  * Download
