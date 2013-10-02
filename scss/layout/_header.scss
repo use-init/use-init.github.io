@@ -32,6 +32,10 @@
 		background: url(../img/logo.svg) no-repeat;
 		background-size: contain;
 	}
+
+	@media (max-width: 35em) {
+		float: none;
+	}
 }
 
 /*
@@ -50,6 +54,10 @@
 
 	li {
 		display: inline-block;
+
+		@media (max-width: 35em) {
+			display: block;
+		}
 	}
 
 	a {
@@ -57,5 +65,10 @@
 
 		display: block;
 		text-decoration: none;
+	}
+
+	@media (max-width: 35em) {
+		float: none;
+		padding: 0;
 	}
 }

@@ -990,6 +990,11 @@ a:visited {
   background: url(../img/logo.svg) no-repeat;
   background-size: contain;
 }
+@media (max-width: 35em) {
+  .site-logo {
+    float: none;
+  }
+}
 
 /*
  * Navigation
@@ -1007,11 +1012,22 @@ a:visited {
 .site-navigation li {
   display: inline-block;
 }
+@media (max-width: 35em) {
+  .site-navigation li {
+    display: block;
+  }
+}
 .site-navigation a {
   padding: 8px;
   padding: 0.5rem;
   display: block;
   text-decoration: none;
+}
+@media (max-width: 35em) {
+  .site-navigation {
+    float: none;
+    padding: 0;
+  }
 }
 
 /**
@@ -1020,6 +1036,12 @@ a:visited {
 .site-content {
   margin-top: 102.4px;
   margin-top: 6.4rem;
+}
+@media (max-width: 35em) {
+  .site-content {
+    margin-top: 227.2px;
+    margin-top: 14.2rem;
+  }
 }
 
 /*
@@ -1048,6 +1070,14 @@ a:visited {
   font-size: 2rem;
   margin: 80px 40px 0 32px;
   margin: 5rem 2.5rem 0 2rem;
+}
+@media (max-width: 42em) {
+  .hero .container > p {
+    font-size: 20px;
+    font-size: 1.25rem;
+    margin: 48px 32px 0 40px;
+    margin: 3rem 2rem 0 2.5rem;
+  }
 }
 
 /*
