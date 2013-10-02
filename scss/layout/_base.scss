@@ -23,6 +23,10 @@ body {
 	line-height: 1.4;
 }
 
+sup > a {
+	text-decoration: none;
+}
+
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
  * These selection declarations have to be separate.
