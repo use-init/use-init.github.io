@@ -1051,7 +1051,9 @@ a:visited {
 .hero {
   min-height: 240px;
   min-height: 15rem;
-  background: url(../img/background-filled.svg) center center;
+  background-color: #0084C0;
+  background-image: url(../img/background-solid.svg);
+  background-position: center;
   background-size: 60%;
 }
 @media (max-width: 18em) {
