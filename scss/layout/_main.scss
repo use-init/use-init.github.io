@@ -140,6 +140,10 @@ code {
  */
 .starting {
 	@extend %center-content;
+
+	/* Fix Hash-link position due to fixed header */
+	@include x-rem(padding-top, 6.5);
+	@include x-rem(margin-top, -6.5);
 }
 
 /*
