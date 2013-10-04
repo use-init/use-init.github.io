@@ -1022,6 +1022,7 @@ a:visited {
   padding: 0.5rem;
   display: block;
   text-decoration: none;
+  color: #6cb8db;
 }
 @media (max-width: 35em) {
   .site-navigation {
@@ -1048,8 +1049,16 @@ a:visited {
  * Hero Unit
  */
 .hero {
-  background: url(../img/background.svg) center center;
+  min-height: 240px;
+  min-height: 15rem;
+  background: url(../img/background-filled.svg) center center;
   background-size: 60%;
+}
+@media (max-width: 18em) {
+  .hero {
+    min-height: 176px;
+    min-height: 11rem;
+  }
 }
 .hero .container {
   position: relative;
@@ -1068,8 +1077,12 @@ a:visited {
 .hero .container > p {
   font-size: 32px;
   font-size: 2rem;
-  margin: 80px 40px 0 32px;
-  margin: 5rem 2.5rem 0 2rem;
+  margin: 144px 40px 0 32px;
+  margin: 9rem 2.5rem 0 2rem;
+  color: white;
+}
+.hero .container > p > a {
+  color: white;
 }
 @media (max-width: 42em) {
   .hero .container > p {
@@ -1077,6 +1090,14 @@ a:visited {
     font-size: 1.25rem;
     margin: 48px 32px 0 40px;
     margin: 3rem 2rem 0 2.5rem;
+  }
+}
+@media (max-width: 18em) {
+  .hero .container > p {
+    font-size: 16px;
+    font-size: 1rem;
+    margin: 32px 32px 0 40px;
+    margin: 2rem 2rem 0 2.5rem;
   }
 }
 
@@ -1129,6 +1150,12 @@ pre {
   padding: 8px;
   padding: 0.5rem;
   background: #eeeeee;
+}
+
+code {
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /*

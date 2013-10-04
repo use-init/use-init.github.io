@@ -18,8 +18,14 @@
  * Hero Unit
  */
 .hero {
-	background: url(../img/background.svg) center center;
+	@include x-rem(min-height, 15); // So that text is not running outside the box on mobile
+
+	background: url(../img/background-filled.svg) center center;
 	background-size: 60%;
+
+	@media (max-width: 18em) {
+		@include x-rem(min-height, 11);
+	}
 
 	.container {
 		@extend %center-content;
@@ -41,11 +47,22 @@
 
 		> p {
 			@include x-rem(font-size, 2);
-			@include x-rem(margin, 5 2.5 0 2);
+			@include x-rem(margin, 9 2.5 0 2);
+
+			color: $main-inverted;
+
+			> a {
+				color: $main-inverted;
+			}
 
 			@media (max-width: 42em) {
 				@include x-rem(font-size, 1.25);
 				@include x-rem(margin, 3 2 0 2.5);
+			}
+
+			@media (max-width: 18em) {
+				@include x-rem(font-size, 1);
+				@include x-rem(margin, 2 2 0 2.5);
 			}
 		}
 	}
@@ -99,6 +116,12 @@
 pre {
 	@include x-rem(padding, 0.5);
 	background: $code-bg;
+}
+
+code {
+	word-wrap: break-word;
+	word-break: break-word;
+	overflow-wrap: break-word;
 }
 
 /*
