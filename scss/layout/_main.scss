@@ -48,7 +48,9 @@
 		> p {
 			@include x-rem(font-size, 2);
 			@include x-rem(margin, 9 2.5 0 2);
+			@include x-rem(padding, 1);
 
+			text-align: center;
 			color: $main-inverted;
 
 			> a {

@@ -1079,6 +1079,9 @@ a:visited {
   font-size: 2rem;
   margin: 144px 40px 0 32px;
   margin: 9rem 2.5rem 0 2rem;
+  padding: 16px;
+  padding: 1rem;
+  text-align: center;
   color: white;
 }
 .hero .container > p > a {
