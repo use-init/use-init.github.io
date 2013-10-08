@@ -2,17 +2,19 @@
  * All styles related to markup inside the header
  */
 .site-header {
-	position: fixed;
-	z-index: 100;
-	top: 0;
-	left: 0;
-	right: 0;
-
 	overflow: hidden;
 
 	background: #fff;
 	background: rgba(255, 255, 255, 0.9);
 	border-bottom: 1px solid rgba($accent, 0.1);
+
+	@media (min-height: 42em) {
+		position: fixed;
+		z-index: 100;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
 }
 
 /*

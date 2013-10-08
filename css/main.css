@@ -944,15 +944,19 @@ a:visited {
  * All styles related to markup inside the header
  */
 .site-header {
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  right: 0;
   overflow: hidden;
   background: #fff;
   background: rgba(255, 255, 255, 0.9);
   border-bottom: 1px solid rgba(0, 132, 192, 0.1);
+}
+@media (min-height: 42em) {
+  .site-header {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
 }
 
 /*
@@ -1022,10 +1026,10 @@ a:visited {
   margin-top: 102.4px;
   margin-top: 6.4rem;
 }
-@media (max-width: 35em) {
+@media (max-height: 42em) {
   .site-content {
-    margin-top: 227.2px;
-    margin-top: 14.2rem;
+    margin-top: 0;
+    margin-top: 0;
   }
 }
 

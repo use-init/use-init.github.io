@@ -8,8 +8,8 @@
 .site-content {
 	@include x-rem(margin-top, 6.4);
 
-	@media (max-width: 35em) {
-		@include x-rem(margin-top, 14.2);
+	@media (max-height: 42em) {
+		@include x-rem(margin-top, 0);
 	}
 }
 
