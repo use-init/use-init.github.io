@@ -31,6 +31,10 @@
 
 		background: url(../img/logo.svg) no-repeat;
 		background-size: contain;
+
+		.no-svg & {
+			background: url(../img/logo.png) no-repeat;
+		}
 	}
 
 	@media (max-width: 35em) {

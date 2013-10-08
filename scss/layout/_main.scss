@@ -25,8 +25,12 @@
 	background-position: center;
 	background-size: 60%;
 
+	.no-svg & {
+		background-image: url(../img/background-solid.png);
+	}
+
 	@media (max-width: 18em) {
-		@include x-rem(min-height, 11);
+		@include x-rem(min-height, 13.5);
 	}
 
 	.container {
@@ -64,7 +68,12 @@
 				@include x-rem(margin, 3 2 0 2.5);
 			}
 
-			@media (max-width: 18em) {
+			@media (max-width: 42em) {
+				@include x-rem(font-size, 1.25);
+				@include x-rem(margin, 1 2 0 2.5);
+			}
+
+			@media (max-width: 21em) {
 				@include x-rem(font-size, 1);
 				@include x-rem(margin, 2 2 0 2.5);
 			}
@@ -110,6 +119,10 @@
 		display: inline-block;
 		background: url(../img/github.svg) no-repeat;
 		background-size: contain;
+
+		.no-svg & {
+			background: url(../img/github.png) no-repeat;
+		}
 	}
 }
 

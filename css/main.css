@@ -971,6 +971,9 @@ a:visited {
   background: url(../img/logo.svg) no-repeat;
   background-size: contain;
 }
+.no-svg .site-logo > a {
+  background: url(../img/logo.png) no-repeat;
+}
 @media (max-width: 35em) {
   .site-logo {
     float: none;
@@ -1037,10 +1040,13 @@ a:visited {
   background-position: center;
   background-size: 60%;
 }
+.no-svg .hero {
+  background-image: url(../img/background-solid.png);
+}
 @media (max-width: 18em) {
   .hero {
-    min-height: 176px;
-    min-height: 11rem;
+    min-height: 216px;
+    min-height: 13.5rem;
   }
 }
 .hero .container {
@@ -1078,7 +1084,15 @@ a:visited {
     margin: 3rem 2rem 0 2.5rem;
   }
 }
-@media (max-width: 18em) {
+@media (max-width: 42em) {
+  .hero .container > p {
+    font-size: 20px;
+    font-size: 1.25rem;
+    margin: 16px 32px 0 40px;
+    margin: 1rem 2rem 0 2.5rem;
+  }
+}
+@media (max-width: 21em) {
   .hero .container > p {
     font-size: 16px;
     font-size: 1rem;
@@ -1127,6 +1141,9 @@ a:visited {
   display: inline-block;
   background: url(../img/github.svg) no-repeat;
   background-size: contain;
+}
+.no-svg .download-github .icon-github {
+  background: url(../img/github.png) no-repeat;
 }
 
 /*
