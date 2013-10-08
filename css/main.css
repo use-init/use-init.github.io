@@ -1077,7 +1077,11 @@ a:visited {
   text-align: center;
   color: white;
 }
-.hero .container > p > a {
+.hero .container > p > small {
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+.hero .container > p a {
   color: white;
 }
 @media (max-width: 42em) {
