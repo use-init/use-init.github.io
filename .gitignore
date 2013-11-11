@@ -5,6 +5,5 @@
 *.sublime-*
 
 node_modules
-components
 dist
 

@@ -1,0 +1,24 @@
+{
+  "name": "sass-mixins",
+  "version": "0.4.1",
+  "main": "mixins.scss",
+  "author": "Hans Christian Reinl",
+  "ignore": [
+    "node_modules",
+    "partials",
+    "tests",
+    ".gitignore",
+    "Gruntfile.js",
+    "package.json"
+  ],
+  "homepage": "https://github.com/drublic/Sass-Mixins",
+  "_release": "0.4.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.4.1",
+    "commit": "9ceb693119b0413a5ff86420a06845e65a93e9ab"
+  },
+  "_source": "git://github.com/drublic/Sass-Mixins.git",
+  "_target": "~0.4.1",
+  "_originalSource": "sass-mixins"
+}
