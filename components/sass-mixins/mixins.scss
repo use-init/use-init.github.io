@@ -1,4 +1,4 @@
-/**
+/*! sass-mixins - v0.6.0 - 2013-10-14 *//**
  * @description
  * Generates keyframe animations
  *
@@ -38,6 +38,33 @@
 	@keyframes #{$name} {
 		@content;
 	}
+}
+
+/**
+ * @description
+ * Generates `appearance` for a given element
+ *
+ * @author romamatusevich
+ *
+ * @link MDN https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-appearance
+ * @link css-tricks http://css-tricks.com/almanac/properties/a/appearance/
+ * @link spec http://www.w3.org/TR/2004/CR-css3-ui-20040511/#appearance
+ *
+ * @param value
+ * @returns
+ *   -webkit-appearance: <value>;
+ *      -moz-appearance: <value>;
+ *           appearance: <value>;
+ *
+ * @example
+ *   .selector {
+ *     @include x-appearance(button);
+ *   }
+ */
+@mixin x-appearance ($value) {
+	-webkit-appearance: $value;
+	   -moz-appearance: $value;
+	        appearance: $value;
 }
 
 /**
@@ -317,9 +344,6 @@
  * Generates multiple backgrounds
  *
  * @param backgrounds {list}
- * @return
- *   <property>: (<value> * <default-font-size>)px;
- *   <property>: <value>;
  *
  * @example
  *   .selector {
@@ -333,8 +357,6 @@
 @mixin x-multiple-backgrounds ($backgrounds...) {
 	$combined-background-webkit-old: ();
 	$combined-background-webkit: ();
-	$combined-background-moz: ();
-	$combined-background-o: ();
 	$combined-background: ();
 	$end: '';
 
@@ -482,6 +504,44 @@
 
 /**
  * @description
+ * Generates `placeholder` color for a given element
+ *
+ * @author romamatusevich
+ *
+ * @link MDN https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-placeholder
+ * @link css-tricks http://css-tricks.com/snippets/css/style-placeholder-text/
+ *
+ * @param color
+ * @returns
+ *    &::-webkit-input-placeholder {
+ *        color: <color>;
+ *    }
+ *    &::-moz-placeholder {
+ *        color: <color>;
+ *    }
+ *    &:-ms-input-placeholder {
+ *        color: <color>;
+ *    }
+ *
+ * @example
+ *   .selector {
+ *     @include x-placeholder(#bada55);
+ *   }
+ */
+@mixin x-placeholder($color: #000) {
+	&::-webkit-input-placeholder {
+		color: $color; // Chrome, Safari, Opera
+	}
+	&::-moz-placeholder {
+		color: $color; // Firefox 19+
+	}
+	&:-ms-input-placeholder {
+		color: $color; // IE 10+
+	}
+}
+
+/**
+ * @description
  * This mixin will enable using the CSS3 value `rem`, which lets you define
  * property-sizes based on the root-element's font-size.
  *
@@ -555,7 +615,6 @@
  */
 @mixin x-tab-size ($value: 4) {
 	-moz-tab-size: $value;
-	  -o-tab-size: $value;
 	     tab-size: $value;
 }
 

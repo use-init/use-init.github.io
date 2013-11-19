@@ -5,12 +5,15 @@ Take what you need!
 ### This repository has some Sass-Mixins for you:
 
 * [animation](partials/_animation.scss)
+* [appearance](partials/_appearance.scss)
 * [border-radius](partials/_border-radius.scss)
 * [box-shadow](partials/_box-shadow.scss)
 * [box-sizing](partials/_box-sizing.scss)
 * [linear-gradient](partials/_linear-gradient.scss)
 * [multiple-backgrounds](partials/_multiple-backgrounds.scss)
 * [multiple-colored-gradient](partials/_multiple-colored-gradient.scss)
+* [opacity](partials/_opacity.scss)
+* [placeholder](partials/_placeholder.scss)
 * [rem](partials/_rem.scss)
 * [transform](partials/_transform.scss)
 * [transition](partials/_transition.scss)
