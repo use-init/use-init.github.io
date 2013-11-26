@@ -176,3 +176,46 @@ code {
 	@extend %center-content;
 }
 
+/*
+ * Build upon
+ */
+.build-upon {
+	@extend %center-content;
+
+	ul {
+		@include x-rem(font-size, 1.3);
+
+		list-style: none;
+		margin: 0 -1%;
+		padding: 0;
+		overflow: hidden;
+		text-align: center;
+	}
+
+	li {
+		@include x-box-sizing;
+
+		float: left;
+		width: 33%;
+		padding: 0 1%;
+	}
+
+	img {
+		@include x-rem(margin, 0 auto 1);
+
+		display: block;
+		max-width: 100%;
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+	}
+
+	@media all and (max-width: 40em) {
+		li {
+			width: 100%;
+			margin-bottom: 1rem
+		}
+	}
+}
