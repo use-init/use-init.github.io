@@ -2,7 +2,7 @@
   "name": "init-website",
   "title": "init-website",
   "description": "The website for INIT",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "homepage": "https://drublic.github.io/init",
   "repository": {
     "type": "git",
