@@ -1,4 +1,4 @@
-# <img src="http://rawgithub.com/drublic/init/master/logo.svg" alt="INIT" title="INIT" width="200">
+# <img src="http://rawgithub.com/use-init/init/master/logo.svg" alt="INIT" title="INIT" width="200">
 
 The website for INIT. Please refer to the master branch in order to find all
 information you need.

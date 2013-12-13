@@ -3,13 +3,13 @@
   "title": "init-website",
   "description": "The website for INIT",
   "version": "0.3.0",
-  "homepage": "https://drublic.github.io/init",
+  "homepage": "http://use-init.com/",
   "repository": {
     "type": "git",
-    "url": "git://github.com/drublic/init.git"
+    "url": "git://github.com/use-init/init.git"
   },
   "bugs": {
-    "url": "https://github.com/drublic/init/issues"
+    "url": "https://github.com/use-init/init/issues"
   },
   "license": "MIT",
   "dependencies": {},
