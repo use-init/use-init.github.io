@@ -6,10 +6,10 @@
   "homepage": "http://use-init.com/",
   "repository": {
     "type": "git",
-    "url": "git://github.com/use-init/init.git"
+    "url": "git://github.com/use-init/use-init.github.io.git"
   },
   "bugs": {
-    "url": "https://github.com/use-init/init/issues"
+    "url": "https://github.com/use-init/use-init.github.io/issues"
   },
   "license": "MIT",
   "dependencies": {},
