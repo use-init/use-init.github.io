@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*
+/*!
  * The styles for INIT's website
  *
  * @author Hans Christian Reinl
@@ -9,7 +9,7 @@
 /**
  * Variables to be used throughout the project
  */
-/* sass-mixins - v0.6.0 - 2013-10-14 */
+/*! sass-mixins - v0.6.0 - 2013-10-14 */
                                        /**
 * @description
 * Generates keyframe animations
@@ -865,7 +865,7 @@ table {
 /*
  * Placeholder to center content
  */
-.container, .hero .container, .why, .starting, .credits, .license, .build-upon {
+.container, .hero .container, .why, .starting, .extend, .credits, .license, .build-upon {
   padding: 16px 32px;
   padding: 1rem 2rem;
   max-width: 800px;
@@ -1228,6 +1228,9 @@ code {
   margin-top: -6.5rem;
 }
 
+/*
+ * Extend
+ */
 /*
  * Credits
  */

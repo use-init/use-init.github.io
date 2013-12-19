@@ -163,6 +163,14 @@ code {
 }
 
 /*
+ * Extend
+ */
+
+ .extend {
+ 	@extend %center-content;
+ }
+
+/*
  * Credits
  */
 .credits {
