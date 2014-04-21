@@ -48,14 +48,28 @@
  * when navigated to via the keyboard: h5bp.com/p
  */
 
+.visuallyhidden.focusable {
+	background: #272729;
+	color: #fff;
+	text-decoration: none;
+
+	&:visited {
+		color: #fff;
+	}
+}
+
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
+	@include x-rem(padding, 1);
+	@include x-rem(left, 2);
+
 	clip: auto;
 	height: auto;
 	margin: 0;
 	overflow: visible;
-	position: static;
+	top: 0;
 	width: auto;
+	z-index: 30;
 }
 
 /*

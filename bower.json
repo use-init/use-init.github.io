@@ -8,5 +8,8 @@
     "normalize-scss": "3.0.1",
     "modernizr": "2.7.2",
     "sass-mixins": "0.8.0"
+  },
+  "devDependencies": {
+    "jquery-requestAnimationFrame": "~0.1.2"
   }
 }

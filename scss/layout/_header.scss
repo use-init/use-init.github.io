@@ -2,45 +2,106 @@
  * All styles related to markup inside the header
  */
 .site-header {
+	position: relative;
 	overflow: hidden;
-
-	background: #fff;
-	background: rgba(255, 255, 255, 0.9);
-	border-bottom: 1px solid rgba($accent, 0.1);
-
-	@media (min-height: 42em) {
-		position: fixed;
-		z-index: 100;
-		top: 0;
-		left: 0;
-		right: 0;
-	}
 }
 
 /*
- * The logo
+ * Hero Unit
  */
-.site-logo {
-	float: left;
-	margin: 0;
+.hero {
+	@include x-rem(min-height, 30);
+	@include x-transition(margin-top 0.4s);
 
-	> a {
-		@extend %ir;
-		@include x-rem(width, 9);
-		@include x-rem(height, 5);
+	position: relative;
+	text-align: center;
 
-		display: block;
+	background: #fff url(../img/canada.jpg) 50% 50%;
+	background-size: 100% auto;
 
-		background: url(../img/logo.svg) no-repeat;
-		background-size: contain;
+	&:after {
+		@include x-linear-gradient('to bottom', transparent, rgba(#272729, 0), rgba(#272729, 0.2));
+		@include x-rem(height, 4);
 
-		.no-svg & {
-			background: url(../img/logo.png) no-repeat;
+		content: '';
+		position: absolute;
+		right: 0;
+		left: 0;
+		bottom: 0;
+	}
+
+	h1 {
+		margin: 0;
+		text-indent: -99em;
+		overflow: hidden;
+
+		&:before,
+		&:after {
+			@include x-rem(width, 12.5);
+			@include x-rem(height, 12.5);
+			@include x-rem(margin, (12.5 / -2) 0 0 (12.5 / -2));
+
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+
+			background: url(../img/init-logo.svg) no-repeat 0 0;
+			background-size: 100% 100%;
+		}
+
+		&:after {
+			@include x-rem(width, 10);
+			@include x-rem(height, 4.7);
+			@include x-rem(margin, 6 0 0 (10 / -2));
+
+			position: absolute;
+			top: 50%;
+			left: 50%;
+
+			background-image: url(../img/init-brand.svg);
+		}
+
+		@media screen and (max-width: 44em) {
+			&:before {
+				@include x-rem(width, 10);
+				@include x-rem(height, 10);
+				@include x-rem(margin, (10 / -2) 0 0 (10 / -2));
+			}
+
+			&:after {
+				@include x-rem(width, 8);
+				@include x-rem(height, 3.7);
+				@include x-rem(margin, 4.3 0 0 (8 / -2));
+			}
 		}
 	}
 
-	@media (max-width: 35em) {
-		float: none;
+	@media screen and (max-width: 48em) {
+		min-height: 22rem;
+		background-size: cover;
+	}
+}
+
+.hero-credits {
+	@include x-rem(right, 1);
+	@include x-rem(font-size, 0.8);
+
+	position: absolute;
+	bottom: 0;
+	color: #ddd;
+	opacity: 0.6;
+
+	&:hover {
+		opacity: 1;
+	}
+
+	a {
+		color: #ddd;
+
+		&:visited {
+			color: #ddd;
+		}
 	}
 }
 
@@ -48,9 +109,39 @@
  * Navigation
  */
 .site-navigation {
-	@include x-rem(padding, 1.5 0);
+	@include x-box-sizing;
+	@include x-transition(top 0.4s);
+	@include x-rem(top, -4.5);
+	@include x-rem(padding, 0 2);
 
-	float: right;
+	position: fixed;
+	z-index: 10;
+	width: 100%;
+	background: #272729;
+
+	&:target {
+		top: 0;
+
+		~ .hero {
+			@include x-rem(margin-top, 4.5);
+		}
+
+		~ .navigation-open {
+			display: none;
+		}
+	}
+
+	&.is-active {
+		top: 0;
+
+		~ .hero {
+			@include x-rem(margin-top, 4.5);
+		}
+
+		~ .navigation-open {
+			display: none;
+		}
+	}
 
 	> ul {
 		list-style: none;
@@ -60,22 +151,154 @@
 
 	li {
 		display: inline-block;
-
-		@media (max-width: 35em) {
-			display: block;
-		}
 	}
 
 	a {
-		@include x-rem(padding, 0.5);
+		@include x-rem(padding, 1.7 1 1.4);
 
 		display: block;
+		color: #fff;
 		text-decoration: none;
-		color: $accent-light;
+
+		&:visited {
+			color: #fff;
+		}
 	}
 
-	@media (max-width: 35em) {
-		float: none;
-		padding: 0;
+	/*
+	 * The logo
+	 */
+	.site-logo {
+		float: left;
+
+		> a {
+			@extend %ir;
+			@include x-rem(width, 7);
+			@include x-rem(height, 3.5);
+			@include x-rem(margin, 0.5 2 0.5 0.5);
+
+			display: block;
+			padding: 0;
+
+			background: url(../img/logo.svg) no-repeat 0 0;
+			background-size: 100% 100%;
+
+			.no-svg & {
+				background: url(../img/logo.png) no-repeat;
+			}
+		}
+	}
+
+
+	/**
+	 * Close the navigation
+	 */
+	.navigation-close {
+		float: right;
+	}
+
+
+	@media screen and (max-width: 44em) {
+		@include x-transition(left 0.4s);
+
+		// Hide initially
+		-webkit-transform: translate(-100%, 0);
+		   -moz-transform: translate(-100%, 0);
+		     -o-transform: translate(-100%, 0);
+		    -ms-transform: translate(-100%, 0);
+		        transform: translate(-100%, 0);
+		-webkit-transform: translate3d(-100%, 0, 0); // iOS
+		        transform: translate3d(-100%, 0, 0);
+
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 60%;
+		padding: 1rem 0;
+
+		&:target {
+
+			// Show
+			-webkit-transform: translate(0, 0);
+			   -moz-transform: translate(0, 0);
+			     -o-transform: translate(0, 0);
+			    -ms-transform: translate(0, 0);
+			        transform: translate(0, 0);
+			-webkit-transform: translate3d(0, 0, 0); // iOS
+			        transform: translate3d(0, 0, 0);
+
+			~ .hero {
+				margin-top: 0;
+			}
+
+			.navigation-close {
+				left: 100%;
+			}
+		}
+
+		&.is-active {
+
+			// Show
+			-webkit-transform: translate(0, 0);
+			   -moz-transform: translate(0, 0);
+			     -o-transform: translate(0, 0);
+			    -ms-transform: translate(0, 0);
+			        transform: translate(0, 0);
+			-webkit-transform: translate3d(0, 0, 0); // iOS
+			        transform: translate3d(0, 0, 0);
+
+
+			~ .hero {
+				margin-top: 0;
+			}
+
+			.navigation-close {
+				left: 100%;
+			}
+		}
+
+
+		li {
+			display: block;
+		}
+
+		.site-logo {
+			float: none;
+		}
+
+		.navigation-close {
+			@media screen and (max-width: 44em) {
+				position: fixed;
+				left: 0;
+				z-index: 20;
+				top: 0;
+				background: #272729;
+				padding: 1rem;
+			}
+		}
+
+	}
+}
+
+/**
+ * Open the navigation
+ */
+.navigation-open {
+	@include x-rem(left, 2);
+	@include x-rem(padding, 1);
+
+	position: fixed;
+	z-index: 20;
+	top: 0;
+	background: #272729;
+	color: #fff;
+	text-decoration: none;
+
+	&:visited {
+		color: #fff;
+	}
+
+	@media screen and (max-width: 44em) {
+		left: 0;
 	}
 }

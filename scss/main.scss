@@ -17,8 +17,3 @@
 @import 'layout/header';
 @import 'layout/main';
 @import 'layout/footer';
-
-// Print Stylesheets
-@media print {
-	@import 'media/print';
-}

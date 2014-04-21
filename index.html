@@ -30,26 +30,36 @@
 
 		<!-- The fixed header -->
 		<header class="site-header">
-			<div class="container">
-				<h1 class="site-logo" role="banner"><a href="#">INIT</a></h1>
 
-				<nav class="site-navigation" role="navigation">
-					<ul>
-						<li><a href="#getting-started">Getting Started</a></li>
-						<li><a href="https://github.com/use-init/init/blob/master/docs/TOC.md">Documentation</a></li>
-						<li><a href="https://github.com/use-init/init">The Code</a></li>
-					</ul>
-				</nav>
+			<a href="#content" class="visuallyhidden focusable">Skip to content</a>
+
+			<nav class="site-navigation" id="navigation" role="navigation">
+				<a href="#" class="navigation-close" role="button">Close</a>
+				<ul>
+					<li class="site-logo"><a href="#">INIT</a></li>
+					<li><a href="#getting-started">Getting Started</a></li>
+					<li><a href="https://github.com/use-init/init/blob/master/docs/TOC.md">Documentation</a></li>
+					<li><a href="https://github.com/use-init/init">The Code</a></li>
+				</ul>
+			</nav>
+
+			<a href="#navigation" class="navigation-open" role="button">Navigation</a>
+
+			<div class="hero">
+				<h1 role="banner"><a href="#">INIT</a></h1>
+
+				<p class="hero-credits">Picture by <a href="http://cfremdt.de/">Christoph Fremdt</a></p>
 			</div>
+
 		</header>
 
 		<!-- Main Content area -->
-		<main role="main" class="site-content">
-			<section class="hero">
+		<main id="content" role="main" class="site-content">
+
+			<section class="claim">
 				<div class="container">
 					<p>INIT is based upon <a href="http://html5boilerplate.com/">HTML5 Boilerplate</A> and adds more structure for SCSS and JavaScript files, includes build tasks and a whole lot more.</p>
 				</div>
-				<!-- A slider, maybe -->
 			</section>
 
 			<section id="download" class="download">
@@ -251,7 +261,8 @@ $ npm install</code></pre>
 			</div>
 		</footer>
 
-		<script src="components/jquery/jquery.min.js"></script>
+		<script src="components/jquery/dist/jquery.min.js"></script>
+		<script src="components/jquery-requestAnimationFrame/dist/jquery.requestAnimationFrame.min.js"></script>
 		<script src="js/main.js"></script>
 
 		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>

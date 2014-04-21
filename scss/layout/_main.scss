@@ -5,79 +5,29 @@
 	@extend %center-content;
 }
 
-.site-content {
-	@include x-rem(margin-top, 6.4);
-
-	@media (max-height: 42em) {
-		@include x-rem(margin-top, 0);
-	}
-}
-
-
-/*
- * Hero Unit
+/**
+ * Claim
  */
-.hero {
-	@include x-rem(min-height, 15); // So that text is not running outside the box on mobile
+.claim {
+	@include x-rem(font-size, 2);
+	@include x-rem(padding, 1);
 
-	background-color: #0084C0;
-	background-image: url(../img/background-solid.svg);
-	background-position: center;
-	background-size: 60%;
+	position: relative;
+	text-align: center;
+	background: #fff;
+	border-top: 1px solid rgba(#aaa, 0.3);
+	box-shadow: inset 0 1px 2px #fff;
 
-	.no-svg & {
-		background-image: url(../img/background-solid.png);
-	}
-
-	@media (max-width: 18em) {
-		@include x-rem(min-height, 13.5);
-	}
-
-	.container {
+	> p {
 		@extend %center-content;
+	}
 
-		position: relative;
+	@media (max-width: 42em) {
+		font-size: 1.25rem;
+	}
 
-		&:before {
-			content: '';
-			display: block;
-			width: 0;
-			padding-top: 56.25%;
-		}
-
-		> * {
-			position: absolute;
-			top: 0;
-			left: 0;
-		}
-
-		> p {
-			@include x-rem(font-size, 2);
-			@include x-rem(margin, 9 2.5 0 2);
-			@include x-rem(padding, 1);
-
-			text-align: center;
-			color: $main-inverted;
-
-			a {
-				color: $main-inverted;
-			}
-
-			@media (max-width: 42em) {
-				@include x-rem(font-size, 1.25);
-				@include x-rem(margin, 3 2 0 2.5);
-			}
-
-			@media (max-width: 42em) {
-				@include x-rem(font-size, 1.25);
-				@include x-rem(margin, 1 2 0 2.5);
-			}
-
-			@media (max-width: 21em) {
-				@include x-rem(font-size, 1);
-				@include x-rem(margin, 2 2 0 2.5);
-			}
-		}
+	@media (max-width: 21em) {
+		font-size: 1rem;
 	}
 }
 
@@ -85,11 +35,12 @@
  * Download
  */
 .download {
-	@include x-rem(padding-top, 6.5);
-	@include x-rem(margin-top, -6.5);
+	@include x-rem(padding-top, 1.5);
+
+	position: relative;
 
 	background: #e0e7f0;
-	border-top: 1px solid rgba($accent, 0.3);
+	border-top: 1px solid rgba(#aaa, 0.3);
 	box-shadow: inset 0 1px 2px #fff;
 	text-align: center;
 }
@@ -149,6 +100,9 @@ code {
  */
 .why {
 	@extend %center-content;
+
+	border-top: 1px solid rgba(#aaa, 0.3);
+	box-shadow: inset 0 1px 2px #fff;
 }
 
 /*
@@ -166,9 +120,9 @@ code {
  * Extend
  */
 
- .extend {
- 	@extend %center-content;
- }
+.extend {
+	@extend %center-content;
+}
 
 /*
  * Credits

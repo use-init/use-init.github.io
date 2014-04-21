@@ -1,6 +1,6 @@
 {
   "name": "init-website",
-  "title": "init-website",
+  "title": "INIT Website",
   "description": "The website for INIT",
   "version": "0.4.0",
   "homepage": "http://use-init.com/",
@@ -16,10 +16,9 @@
   "devDependencies": {
     "matchdep": "0.3.0",
     "grunt": "0.4.x",
-    "grunt-concurrent": "0.5.0",
     "grunt-contrib-connect": "0.7.1",
     "grunt-contrib-copy": "0.5.0",
-    "grunt-contrib-imagemin": "~0.6.1",
+    "grunt-contrib-imagemin": "0.6.1",
     "grunt-contrib-jshint": "0.10.0",
     "grunt-contrib-sass": "0.7.3",
     "grunt-contrib-watch": "0.6.1",

@@ -158,12 +158,6 @@ module.exports = function (grunt) {
 				files: config.jsHintFiles,
 				tasks: ['jshint']
 			}
-		},
-
-		// Setup concurrent tasks
-		concurrent: {
-			deploy1: ['jshint', 'modernizr', 'sass:deploy', 'imagemin', 'copy'],
-			dev1: ['jshint', 'sass:dev', 'copy'],
 		}
 	});
 
@@ -171,10 +165,10 @@ module.exports = function (grunt) {
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
 	// A task for development
-	grunt.registerTask('dev', ['concurrent:dev1']);
+	grunt.registerTask('dev', ['jshint', 'sass:dev', 'copy']);
 
 	// A task for deployment
-	grunt.registerTask('deploy', ['concurrent:deploy1']);
+	grunt.registerTask('deploy', ['jshint', 'modernizr', 'sass:deploy', 'imagemin', 'copy']);
 
 	// Default task
 	grunt.registerTask('default', ['dev']);
