@@ -4,9 +4,9 @@
   "main": "",
   "ignore": [],
   "dependencies": {
-    "jquery": "1.10.2",
-    "normalize-scss": "~2.1.2",
-    "modernizr": "~2.7.0",
-    "sass-mixins": "~0.6.0"
+    "jquery": "1.11.0",
+    "normalize-scss": "3.0.1",
+    "modernizr": "2.7.2",
+    "sass-mixins": "0.8.0"
   }
 }

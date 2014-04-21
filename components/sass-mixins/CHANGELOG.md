@@ -2,6 +2,21 @@
 
 ### HEAD
 
+### 0.8.0 - 05.03.2014
+* Add better example for multiple colored gradient
+* Rename tests folder to `test`
+* Add x-baseline mixin
+* Correct indention in opacity mixin
+
+### 0.7.1 - 11.01.2014
+* Fix `x-rem` mixin to work with libsass (#28)
+* Remove -ms-filter for opacity mixin
+
+### 0.7.0 - 19.12.2013
+* Add breakpoint mixin
+* Update animation description
+* Update placeholder mixin
+
 ### 0.6.0 - 14.10.2013
 * Add mixin for placeholder color
 

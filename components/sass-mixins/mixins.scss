@@ -1,11 +1,11 @@
-/*! sass-mixins - v0.6.0 - 2013-10-14 *//**
+/*! sass-mixins - v0.8.0 - 2014-03-06 *//**
  * @description
  * Generates keyframe animations
  *
  * @author drublic
  *
- * @link caniuse
- * @link spec
+ * @link caniuse http://caniuse.com/#feat=css-animation
+ * @link spec http://www.w3.org/TR/css3-animations/
  *
  * @param values
  * @returns
@@ -147,14 +147,14 @@
  *
  * @author drublic
  *
- * @link caniuse
- * @link spec
+ * @link caniuse http://caniuse.com/#feat=css-mediaqueries
+ * @link spec http://www.w3.org/TR/css3-mediaqueries/
  *
  * Note: Please use the CSS unit `em` for device-width in order to stay
  * responsive.
  */
 
-/*
+/**
  * @param device-width {number}
  * @content
  * @returns
@@ -173,7 +173,7 @@
 	}
 }
 
-/*
+/**
  * @param device-width {number}
  * @content
  * @returns
@@ -189,6 +189,43 @@
 @mixin x-until ($device-width) {
 	@media screen and (max-width: $device-width - 0.01) {
 		@content;
+	}
+}
+
+/**
+ * @author romamatusevich
+ *
+ * @param point{string}, bp-mobile-width{number}, bp-tablet-width{number} 
+ * @content
+ * @returns
+ *   @media (max-width: <bp-mobile-width>) {
+ *      <content>
+ *   }
+ *
+ * @example
+ *   .selector {
+ *     x-breakpoints(mobile,  320px) { width: 100%; }
+ *   }
+ */
+@mixin x-breakpoints($point, $bp-mobile-width: 640px, $bp-tablet-width: 1024px) {
+	$bp-mobile: '(max-width: #{$bp-mobile-width})';
+	$bp-tablet: '(min-width: #{$bp-mobile-width}) and (max-width: #{$bp-tablet-width})';
+	$bp-desktop: '(min-width: #{$bp-tablet-width})';
+
+	@if $point == mobile {
+		@media #{$bp-mobile} {
+			@content;
+		}
+	}
+	@else if $point == tablet {
+		@media #{$bp-tablet} {
+			@content;
+		}
+	}
+	@else if $point == desktop {
+		@media #{$bp-desktop} {
+			@content;
+		}
 	}
 }
 
@@ -424,7 +461,17 @@
  *
  * @example
  *   .selector {
- *     @include x-multiple-colored-gradient(( "top", #aaa 0%, #bbb 50%, #ccc 100% ));
+ *     @include x-multiple-colored-gradient((
+ *         "top",
+ *         #f22 0%,
+ *         #f2f 15%,
+ *         #22f 30%,
+ *         #2ff 45%,
+ *         #2f2 60%,
+ *         #2f2 75%,
+ *         #ff2 90%,
+ *         #f22 100%
+ *     ));
  *   }
  *
  * Note: This mixis does not define a fallback-color for your background as it
@@ -488,8 +535,7 @@
  * @param value
  * @returns
  *   opacity: <value>;
- *       filter: alpha(opacity=<value * 100>);
- *   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=<value * 100>)";
+ *    filter: alpha(opacity=<value * 100>);
  *
  * @example
  *   .selector {
@@ -497,46 +543,53 @@
  *   }
  */
 @mixin x-opacity ($value: 1) {
-    opacity: $value;
-        filter: alpha(opacity=$value * 100);
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$value * 100})";
+	opacity: $value;
+	filter: alpha(opacity=$value * 100);
 }
 
 /**
  * @description
- * Generates `placeholder` color for a given element
+ * Generates `placeholder` content for a given element
  *
  * @author romamatusevich
  *
  * @link MDN https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-placeholder
  * @link css-tricks http://css-tricks.com/snippets/css/style-placeholder-text/
  *
- * @param color
  * @returns
  *    &::-webkit-input-placeholder {
- *        color: <color>;
+ *        <content property 1>: <content value 1>;
+ *        ...
+ *        <content property n>: <content value n>;
  *    }
  *    &::-moz-placeholder {
- *        color: <color>;
+ *        <content property 1>: <content value 1>;
+ *        ...
+ *        <content property n>: <content value n>;
  *    }
  *    &:-ms-input-placeholder {
- *        color: <color>;
+ *        <content property 1>: <content value 1>;
+ *        ...
+ *        <content property n>: <content value n>;
  *    }
  *
  * @example
  *   .selector {
- *     @include x-placeholder(#bada55);
+ *     @include x-placeholder {
+ *         color: #bada55;
+ *         font-weight: bold;
+ *     }
  *   }
  */
-@mixin x-placeholder($color: #000) {
+@mixin x-placeholder {
 	&::-webkit-input-placeholder {
-		color: $color; // Chrome, Safari, Opera
+		@content // Chrome, Safari, Opera
 	}
 	&::-moz-placeholder {
-		color: $color; // Firefox 19+
+		@content // Firefox 19+
 	}
 	&:-ms-input-placeholder {
-		color: $color; // IE 10+
+		@content // IE 10+
 	}
 }
 
@@ -576,7 +629,7 @@
 	@each $value in $values {
 
 		// If the value is zero, return 0
-		@if $value == 0 or type_of($value) != number {
+		@if ( $value == 0 ) or type_of($value) == string or type_of($value) == color or type_of($value) == bool {
 			$px-values: append($px-values, $value);
 			$rem-values: append($rem-values, $value);
 
