@@ -935,7 +935,7 @@ th {
 /*
  * Placeholder to center content
  */
-.container, .claim > p, .why, .starting, .extend, .credits, .license, .build-upon {
+.container, .why, .starting, .extend, .credits, .license, .build-upon {
   padding: 16px 32px;
   padding: 1rem 2rem;
   max-width: 800px;
@@ -1062,25 +1062,11 @@ a:visited {
   position: relative;
   overflow: hidden;
 }
-
-/*
- * Hero Unit
- */
-.hero {
-  min-height: 480px;
-  min-height: 30rem;
-  -webkit-transition: margin-top 0.4s;
-  transition: margin-top 0.4s;
-  position: relative;
-  text-align: center;
-  background: white url(../img/canada.jpg) 50% 50%;
-  background-size: 100% auto;
-}
-.hero:after {
+.site-header:after {
   background-color: transparent;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(39, 39, 41, 0)), to(rgba(39, 39, 41, 0.2)));
-  background-image: -webkit-linear-gradient(top, rgba(39, 39, 41, 0), rgba(39, 39, 41, 0.2));
-  background-image: linear-gradient(to bottom, rgba(39, 39, 41, 0), rgba(39, 39, 41, 0.2));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(39, 39, 41, 0)), to(rgba(39, 39, 41, 0.3)));
+  background-image: -webkit-linear-gradient(top, rgba(39, 39, 41, 0), rgba(39, 39, 41, 0.3));
+  background-image: linear-gradient(to bottom, rgba(39, 39, 41, 0), rgba(39, 39, 41, 0.3));
   height: 64px;
   height: 4rem;
   content: '';
@@ -1089,59 +1075,50 @@ a:visited {
   left: 0;
   bottom: 0;
 }
-.hero h1 {
-  margin: 0;
-  text-indent: -99em;
-  overflow: hidden;
-}
-.hero h1:before, .hero h1:after {
-  width: 200px;
-  width: 12.5rem;
-  height: 200px;
-  height: 12.5rem;
-  margin: -100px 0 0 -100px;
-  margin: -6.25rem 0 0 -6.25rem;
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background: url(../img/init-logo.svg) no-repeat 0 0;
-  background-size: 100% 100%;
-}
-.hero h1:after {
-  width: 160px;
-  width: 10rem;
-  height: 75.2px;
-  height: 4.7rem;
-  margin: 96px 0 0 -80px;
-  margin: 6rem 0 0 -5rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background-image: url(../img/init-brand.svg);
-}
-@media screen and (max-width: 44em) {
-  .hero h1:before {
-    width: 160px;
-    width: 10rem;
-    height: 160px;
-    height: 10rem;
-    margin: -80px 0 0 -80px;
-    margin: -5rem 0 0 -5rem;
-  }
-  .hero h1:after {
-    width: 128px;
-    width: 8rem;
-    height: 59.2px;
-    height: 3.7rem;
-    margin: 68.8px 0 0 -64px;
-    margin: 4.3rem 0 0 -4rem;
-  }
+
+/*
+ * Hero Unit
+ */
+.hero {
+  min-height: 480px;
+  min-height: 30rem;
+  margin-top: 104px;
+  margin-top: 6.5rem;
+  position: relative;
+  text-align: center;
+  background: white url(../img/canada.jpg) 50% 50%;
+  background-size: 100% auto;
 }
 @media screen and (max-width: 48em) {
   .hero {
     min-height: 22rem;
+    margin-top: 0;
     background-size: cover;
+  }
+}
+
+/**
+ * Claim
+ */
+.claim {
+  max-width: 800px;
+  max-width: 50rem;
+  padding: 144px 32px;
+  padding: 9rem 2rem;
+  font-size: 36.8px;
+  font-size: 2.3rem;
+  margin: 0 auto;
+  color: #fff;
+  text-align: center;
+}
+@media (max-width: 42em) {
+  .claim {
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 21em) {
+  .claim {
+    font-size: 1rem;
   }
 }
 
@@ -1172,54 +1149,35 @@ a:visited {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transition: top 0.4s;
-  transition: top 0.4s;
-  top: -72px;
-  top: -4.5rem;
   padding: 0 32px;
   padding: 0 2rem;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
   position: fixed;
+  top: 0;
   z-index: 10;
   width: 100%;
   background: #272729;
   /*
    * The logo
    */
-  /**
-   * Close the navigation
-   */
-}
-.site-navigation:target {
-  top: 0;
-}
-.site-navigation:target ~ .hero {
-  margin-top: 72px;
-  margin-top: 4.5rem;
-}
-.site-navigation:target ~ .navigation-open {
-  display: none;
-}
-.site-navigation.is-active {
-  top: 0;
-}
-.site-navigation.is-active ~ .hero {
-  margin-top: 72px;
-  margin-top: 4.5rem;
-}
-.site-navigation.is-active ~ .navigation-open {
-  display: none;
 }
 .site-navigation > ul {
+  max-width: 832px;
+  max-width: 52rem;
+  padding: 0 32px;
+  padding: 0 2rem;
   list-style: none;
-  padding: 0;
-  margin: 0;
+  margin: 0 auto;
 }
 .site-navigation li {
   display: inline-block;
 }
 .site-navigation a {
-  padding: 27.2px 16px 22.4px;
-  padding: 1.7rem 1rem 1.4rem;
+  -webkit-transition: padding 0.2s;
+  transition: padding 0.2s;
+  padding: 46.4px 16px 36.8px;
+  padding: 2.9rem 1rem 2.3rem;
   display: block;
   color: #fff;
   text-decoration: none;
@@ -1231,10 +1189,12 @@ a:visited {
   float: left;
 }
 .site-navigation .site-logo > a {
-  width: 112px;
-  width: 7rem;
-  height: 56px;
-  height: 3.5rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  width: 144px;
+  width: 9rem;
+  height: 86.4px;
+  height: 5.4rem;
   margin: 8px 32px 8px 8px;
   margin: 0.5rem 2rem 0.5rem 0.5rem;
   display: block;
@@ -1246,15 +1206,16 @@ a:visited {
   background: url(../img/logo.png) no-repeat;
 }
 .site-navigation .navigation-close {
-  float: right;
+  display: none;
 }
 @media screen and (max-width: 44em) {
   .site-navigation {
-    -webkit-transition: left 0.4s;
-    transition: left 0.4s;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -moz-transform 0.3s;
+    transition: -ms-transform 0.3s;
+    transition: transform 0.3s;
     -webkit-transform: translate(-100%, 0);
     -moz-transform: translate(-100%, 0);
-    -o-transform: translate(-100%, 0);
     -ms-transform: translate(-100%, 0);
     transform: translate(-100%, 0);
     -webkit-transform: translate3d(-100%, 0, 0);
@@ -1264,11 +1225,12 @@ a:visited {
     bottom: 0;
     width: 60%;
     padding: 1rem 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
   .site-navigation:target {
     -webkit-transform: translate(0, 0);
     -moz-transform: translate(0, 0);
-    -o-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     transform: translate(0, 0);
     -webkit-transform: translate3d(0, 0, 0);
@@ -1280,10 +1242,12 @@ a:visited {
   .site-navigation:target .navigation-close {
     left: 100%;
   }
+  .site-navigation:target ~ .navigation-open {
+    display: none;
+  }
   .site-navigation.is-active {
     -webkit-transform: translate(0, 0);
     -moz-transform: translate(0, 0);
-    -o-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     transform: translate(0, 0);
     -webkit-transform: translate3d(0, 0, 0);
@@ -1295,20 +1259,56 @@ a:visited {
   .site-navigation.is-active .navigation-close {
     left: 100%;
   }
+  .site-navigation.is-active ~ .navigation-open {
+    display: none;
+  }
+  .site-navigation > ul {
+    padding: 0;
+  }
   .site-navigation li {
     display: block;
+  }
+  .site-navigation a {
+    padding: 16px;
+    padding: 1rem;
   }
   .site-navigation .site-logo {
     float: none;
   }
-}
-@media screen and (max-width: 44em) and (max-width: 44em) {
   .site-navigation .navigation-close {
+    display: block;
     position: fixed;
     left: 0;
     z-index: 20;
     top: 0;
     background: #272729;
+    padding: 1rem;
+  }
+}
+
+.is-small .site-logo > a {
+  width: 96px;
+  width: 6rem;
+  height: 52.8px;
+  height: 3.3rem;
+  margin-left: 16px;
+  margin-left: 1rem;
+}
+.is-small a {
+  padding: 25.6px 16px 22.4px;
+  padding: 1.6rem 1rem 1.4rem;
+}
+@media screen and (max-width: 44em) {
+  .is-small .site-logo > a {
+    width: 144px;
+    width: 9rem;
+    height: 86.4px;
+    height: 5.4rem;
+    margin: 8px 32px 8px 8px;
+    margin: 0.5rem 2rem 0.5rem 0.5rem;
+  }
+  .is-small a {
+    padding: 16px;
     padding: 1rem;
   }
 }
@@ -1321,6 +1321,7 @@ a:visited {
   left: 2rem;
   padding: 16px;
   padding: 1rem;
+  display: none;
   position: fixed;
   z-index: 20;
   top: 0;
@@ -1333,6 +1334,7 @@ a:visited {
 }
 @media screen and (max-width: 44em) {
   .navigation-open {
+    display: block;
     left: 0;
   }
 }
@@ -1340,31 +1342,6 @@ a:visited {
 /**
  * All styles related to markup inside the main element
  */
-/**
- * Claim
- */
-.claim {
-  font-size: 32px;
-  font-size: 2rem;
-  padding: 16px;
-  padding: 1rem;
-  position: relative;
-  text-align: center;
-  background: #fff;
-  border-top: 1px solid rgba(170, 170, 170, 0.3);
-  box-shadow: inset 0 1px 2px #fff;
-}
-@media (max-width: 42em) {
-  .claim {
-    font-size: 1.25rem;
-  }
-}
-@media (max-width: 21em) {
-  .claim {
-    font-size: 1rem;
-  }
-}
-
 /*
  * Download
  */

@@ -4,23 +4,9 @@
 .site-header {
 	position: relative;
 	overflow: hidden;
-}
-
-/*
- * Hero Unit
- */
-.hero {
-	@include x-rem(min-height, 30);
-	@include x-transition(margin-top 0.4s);
-
-	position: relative;
-	text-align: center;
-
-	background: #fff url(../img/canada.jpg) 50% 50%;
-	background-size: 100% auto;
 
 	&:after {
-		@include x-linear-gradient('to bottom', transparent, rgba(#272729, 0), rgba(#272729, 0.2));
+		@include x-linear-gradient('to bottom', transparent, rgba(#272729, 0), rgba(#272729, 0.3));
 		@include x-rem(height, 4);
 
 		content: '';
@@ -29,57 +15,46 @@
 		left: 0;
 		bottom: 0;
 	}
+}
 
-	h1 {
-		margin: 0;
-		text-indent: -99em;
-		overflow: hidden;
+/*
+ * Hero Unit
+ */
+.hero {
+	@include x-rem(min-height, 30);
+	@include x-rem(margin-top, 6.5);
 
-		&:before,
-		&:after {
-			@include x-rem(width, 12.5);
-			@include x-rem(height, 12.5);
-			@include x-rem(margin, (12.5 / -2) 0 0 (12.5 / -2));
+	position: relative;
+	text-align: center;
 
-			content: '';
-			position: absolute;
-			top: 50%;
-			left: 50%;
-
-			background: url(../img/init-logo.svg) no-repeat 0 0;
-			background-size: 100% 100%;
-		}
-
-		&:after {
-			@include x-rem(width, 10);
-			@include x-rem(height, 4.7);
-			@include x-rem(margin, 6 0 0 (10 / -2));
-
-			position: absolute;
-			top: 50%;
-			left: 50%;
-
-			background-image: url(../img/init-brand.svg);
-		}
-
-		@media screen and (max-width: 44em) {
-			&:before {
-				@include x-rem(width, 10);
-				@include x-rem(height, 10);
-				@include x-rem(margin, (10 / -2) 0 0 (10 / -2));
-			}
-
-			&:after {
-				@include x-rem(width, 8);
-				@include x-rem(height, 3.7);
-				@include x-rem(margin, 4.3 0 0 (8 / -2));
-			}
-		}
-	}
+	background: #fff url(../img/canada.jpg) 50% 50%;
+	background-size: 100% auto;
 
 	@media screen and (max-width: 48em) {
 		min-height: 22rem;
+		margin-top: 0;
 		background-size: cover;
+	}
+}
+
+/**
+ * Claim
+ */
+.claim {
+	@include x-rem(max-width, 50);
+	@include x-rem(padding, 9 2);
+	@include x-rem(font-size, 2.3);
+
+	margin: 0 auto;
+	color: #fff;
+	text-align: center;
+
+	@media (max-width: 42em) {
+		font-size: 1.25rem;
+	}
+
+	@media (max-width: 21em) {
+		font-size: 1rem;
 	}
 }
 
@@ -110,43 +85,21 @@
  */
 .site-navigation {
 	@include x-box-sizing;
-	@include x-transition(top 0.4s);
-	@include x-rem(top, -4.5);
 	@include x-rem(padding, 0 2);
+	@include x-box-shadow(0 0 3px rgba(0, 0, 0, 0.4));
 
 	position: fixed;
+	top: 0;
 	z-index: 10;
 	width: 100%;
 	background: #272729;
 
-	&:target {
-		top: 0;
-
-		~ .hero {
-			@include x-rem(margin-top, 4.5);
-		}
-
-		~ .navigation-open {
-			display: none;
-		}
-	}
-
-	&.is-active {
-		top: 0;
-
-		~ .hero {
-			@include x-rem(margin-top, 4.5);
-		}
-
-		~ .navigation-open {
-			display: none;
-		}
-	}
-
 	> ul {
+		@include x-rem(max-width, 52);
+		@include x-rem(padding, 0 2);
+
 		list-style: none;
-		padding: 0;
-		margin: 0;
+		margin: 0 auto;
 	}
 
 	li {
@@ -154,7 +107,8 @@
 	}
 
 	a {
-		@include x-rem(padding, 1.7 1 1.4);
+		@include x-transition(padding 0.2s);
+		@include x-rem(padding, 2.9 1 2.3);
 
 		display: block;
 		color: #fff;
@@ -173,8 +127,9 @@
 
 		> a {
 			@extend %ir;
-			@include x-rem(width, 7);
-			@include x-rem(height, 3.5);
+			@include x-transition(all 0.2s);
+			@include x-rem(width, 9);
+			@include x-rem(height, 5.4);
 			@include x-rem(margin, 0.5 2 0.5 0.5);
 
 			display: block;
@@ -189,22 +144,19 @@
 		}
 	}
 
-
-	/**
-	 * Close the navigation
-	 */
 	.navigation-close {
-		float: right;
+		display: none;
 	}
 
-
 	@media screen and (max-width: 44em) {
-		@include x-transition(left 0.4s);
+		-webkit-transition: -webkit-transform 0.3s;
+		transition: -moz-transform 0.3s;
+		transition:  -ms-transform 0.3s;
+		transition:      transform 0.3s;
 
 		// Hide initially
 		-webkit-transform: translate(-100%, 0);
 		   -moz-transform: translate(-100%, 0);
-		     -o-transform: translate(-100%, 0);
 		    -ms-transform: translate(-100%, 0);
 		        transform: translate(-100%, 0);
 		-webkit-transform: translate3d(-100%, 0, 0); // iOS
@@ -216,12 +168,15 @@
 		width: 60%;
 		padding: 1rem 0;
 
+		// Layer promotion
+		-webkit-backface-visibility: hidden;
+		        backface-visibility: hidden;
+
 		&:target {
 
 			// Show
 			-webkit-transform: translate(0, 0);
 			   -moz-transform: translate(0, 0);
-			     -o-transform: translate(0, 0);
 			    -ms-transform: translate(0, 0);
 			        transform: translate(0, 0);
 			-webkit-transform: translate3d(0, 0, 0); // iOS
@@ -233,6 +188,10 @@
 
 			.navigation-close {
 				left: 100%;
+			}
+
+			~ .navigation-open {
+				display: none;
 			}
 		}
 
@@ -241,7 +200,6 @@
 			// Show
 			-webkit-transform: translate(0, 0);
 			   -moz-transform: translate(0, 0);
-			     -o-transform: translate(0, 0);
 			    -ms-transform: translate(0, 0);
 			        transform: translate(0, 0);
 			-webkit-transform: translate3d(0, 0, 0); // iOS
@@ -255,11 +213,22 @@
 			.navigation-close {
 				left: 100%;
 			}
+
+			~ .navigation-open {
+				display: none;
+			}
 		}
 
+		> ul {
+			padding: 0;
+		}
 
 		li {
 			display: block;
+		}
+
+		a {
+			@include x-rem(padding, 1);
 		}
 
 		.site-logo {
@@ -267,16 +236,42 @@
 		}
 
 		.navigation-close {
-			@media screen and (max-width: 44em) {
-				position: fixed;
-				left: 0;
-				z-index: 20;
-				top: 0;
-				background: #272729;
-				padding: 1rem;
+			display: block;
+			position: fixed;
+			left: 0;
+			z-index: 20;
+			top: 0;
+			background: #272729;
+			padding: 1rem;
+		}
+	}
+}
+
+.is-small {
+	.site-logo {
+		> a {
+			@include x-rem(width, 6);
+			@include x-rem(height, 3.3);
+			@include x-rem(margin-left, 1);
+		}
+	}
+
+	a {
+		@include x-rem(padding, 1.6 1 1.4);
+	}
+
+	@media screen and (max-width: 44em) {
+		.site-logo {
+			> a {
+				@include x-rem(width, 9);
+				@include x-rem(height, 5.4);
+				@include x-rem(margin, 0.5 2 0.5 0.5);
 			}
 		}
 
+		a {
+			@include x-rem(padding, 1);
+		}
 	}
 }
 
@@ -287,6 +282,7 @@
 	@include x-rem(left, 2);
 	@include x-rem(padding, 1);
 
+	display: none;
 	position: fixed;
 	z-index: 20;
 	top: 0;
@@ -299,6 +295,7 @@
 	}
 
 	@media screen and (max-width: 44em) {
+		display: block;
 		left: 0;
 	}
 }

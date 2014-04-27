@@ -25,13 +25,18 @@
 		}
 
 		setHeaderTranslate(scroll);
+		setHeaderClass(scroll);
 
 		window.cancelAnimationFrame(scrollUpdate);
 	};
 
 	var setHeaderTranslate = function (scroll) {
 		$('.hero').css('transform', 'translateY(' + (scroll / 2) + 'px)');
-		$('.hero h1').css('transform', 'translateY(' + (scroll / 3) + 'px)');
+		$('.claim').css('transform', 'translateY(' + (scroll / 3) + 'px)');
+	};
+
+	var setHeaderClass = function (scroll) {
+		$('.site-header').toggleClass('is-small', scroll > 510);
 	};
 
 	/**
@@ -46,6 +51,7 @@
 	 */
 	$(window).on('hashchange', function () {
 		setHeaderTranslate(0);
+		setHeaderClass(0);
 	});
 
 	/**
