@@ -145,6 +145,16 @@ module.exports = function (grunt) {
 					port: 9001,
 					keepalive: true
 				}
+			},
+
+
+			serve: {
+				options: {
+					port: 10001,
+					open: {
+						 target: 'http://localhost:10001/'
+					}
+				}
 			}
 		},
 
@@ -166,6 +176,7 @@ module.exports = function (grunt) {
 
 	// A task for development
 	grunt.registerTask('dev', ['jshint', 'sass:dev', 'copy']);
+	grunt.registerTask('serve', ['connect:serve', 'watch']);
 
 	// A task for deployment
 	grunt.registerTask('deploy', ['jshint', 'modernizr', 'sass:deploy', 'imagemin', 'copy']);
