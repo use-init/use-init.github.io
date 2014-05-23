@@ -1128,6 +1128,7 @@ a:visited {
   font-size: 12.8px;
   font-size: 0.8rem;
   position: absolute;
+  z-index: 10;
   bottom: 0;
   color: #ddd;
   opacity: 0.6;
@@ -1210,6 +1211,8 @@ a:visited {
 }
 @media screen and (max-width: 44em) {
   .site-navigation {
+    max-width: 240px;
+    max-width: 15rem;
     -webkit-transition: -webkit-transform 0.3s;
     transition: -moz-transform 0.3s;
     transition: -ms-transform 0.3s;
@@ -1319,15 +1322,24 @@ a:visited {
 .navigation-open {
   left: 32px;
   left: 2rem;
-  padding: 16px;
-  padding: 1rem;
+  background-size: 40px;
+  background-size: 2.5rem;
+  background-position: 0 9.6px;
+  background-position: 0 0.6rem;
+  padding: 16px 16px 16px 40px;
+  padding: 1rem 1rem 1rem 2.5rem;
   display: none;
   position: fixed;
   z-index: 20;
   top: 0;
-  background: #272729;
   color: #fff;
   text-decoration: none;
+  background-color: #272729;
+  background-image: url(../logo--minimal.svg);
+  background-repeat: no-repeat;
+}
+.no-svg .navigation-open {
+  background-image: url(../logo--minimal.png);
 }
 .navigation-open:visited {
   color: #fff;

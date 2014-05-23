@@ -63,6 +63,7 @@
 	@include x-rem(font-size, 0.8);
 
 	position: absolute;
+	z-index: 10;
 	bottom: 0;
 	color: #ddd;
 	opacity: 0.6;
@@ -149,6 +150,8 @@
 	}
 
 	@media screen and (max-width: 44em) {
+		@include x-rem(max-width, 15);
+
 		-webkit-transition: -webkit-transform 0.3s;
 		transition: -moz-transform 0.3s;
 		transition:  -ms-transform 0.3s;
@@ -280,15 +283,24 @@
  */
 .navigation-open {
 	@include x-rem(left, 2);
-	@include x-rem(padding, 1);
+	@include x-rem(background-size, 2.5);
+	@include x-rem(background-position, 0 0.6);
+	@include x-rem(padding, 1 1 1 2.5);
 
 	display: none;
 	position: fixed;
 	z-index: 20;
 	top: 0;
-	background: #272729;
 	color: #fff;
 	text-decoration: none;
+
+	background-color: #272729;
+	background-image: url(../logo--minimal.svg);
+	background-repeat: no-repeat;
+
+	.no-svg & {
+		background-image: url(../logo--minimal.png);
+	}
 
 	&:visited {
 		color: #fff;
