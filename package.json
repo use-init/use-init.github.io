@@ -2,7 +2,7 @@
   "name": "init-website",
   "title": "INIT Website",
   "description": "The website for INIT",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "homepage": "http://use-init.com/",
   "repository": {
     "type": "git",
