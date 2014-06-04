@@ -9,7 +9,7 @@
 /**
  * Variables to be used throughout the project
  */
-/*! sass-mixins - v0.8.0 - 2014-03-06 */
+/*! sass-mixins - v0.8.0 - 2014-04-28 */
                                        /**
 * @description
 * Generates keyframe animations
@@ -55,6 +55,25 @@
  * @example
  *   .selector {
  *     @include x-appearance(button);
+ *   }
+ */
+/**
+ * @description
+ * Generates `background-size` output for a given element.
+ *
+ * @author drublic
+ *
+ * @link caniuse http://caniuse.com/background-img-opts
+ * @link spec http://www.w3.org/TR/css3-background/
+ *
+ * @param value
+ * @returns
+ *   -webkit-background-size: $args;
+ *           background-size: $args;
+ *
+ * @example
+ *   .selector {
+ *     @include x-background-size(100% auto);
  *   }
  */
 /**
@@ -166,6 +185,27 @@
  * @example
  *   .selector {
  *     x-breakpoints(mobile,  320px) { width: 100%; }
+ *   }
+ */
+/**
+ * @description
+ * Generates `calc` function which allows mathematical expressions for a given property
+ *
+ * @author romamatusevich
+ *
+ * @link spec http://www.w3.org/TR/css3-values/#calc
+ * @link caniuse http://caniuse.com/calc
+ *
+ * @param property
+ * @param expression
+ *
+ * @returns
+ *    <property>: -webkit-calc(<expression>);
+ *    <property>: calc(<expression>);
+ *
+ * @example
+ *   .selector {
+ *     @include x-calc(width, "600px - 2em");
  *   }
  */
 /**

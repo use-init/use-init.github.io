@@ -2,6 +2,13 @@
 
 ### HEAD
 
+### 0.9.0 - 03.05.2014
+* Add background-size mixin
+* Add multi values for transition mixin
+* Add multi values for box-shadow mixin
+* Use single quotes in gradient mixins
+* Add mixin for calc
+
 ### 0.8.0 - 05.03.2014
 * Add better example for multiple colored gradient
 * Rename tests folder to `test`

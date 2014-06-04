@@ -1,4 +1,4 @@
-/*! sass-mixins - v0.8.0 - 2014-03-06 *//**
+/*! sass-mixins - v0.8.0 - 2014-04-28 *//**
  * @description
  * Generates keyframe animations
  *
@@ -69,6 +69,30 @@
 
 /**
  * @description
+ * Generates `background-size` output for a given element.
+ *
+ * @author drublic
+ *
+ * @link caniuse http://caniuse.com/background-img-opts
+ * @link spec http://www.w3.org/TR/css3-background/
+ *
+ * @param value
+ * @returns
+ *   -webkit-background-size: $args;
+ *           background-size: $args;
+ *
+ * @example
+ *   .selector {
+ *     @include x-background-size(100% auto);
+ *   }
+ */
+@mixin x-background-size ($values...) {
+    -webkit-background-size: $values; // For Android 2.x
+            background-size: $values;
+}
+
+/**
+ * @description
  * Generates cross-browser-compatible `border-radius` for a given element
  *
  * @author drublic
@@ -110,7 +134,7 @@
  *     @include x-box-shadow(5px 5px 10px 5px #aaa);
  *   }
  */
-@mixin x-box-shadow ($values) {
+@mixin x-box-shadow ($values...) {
 	-webkit-box-shadow: $values; // iOS Safari 3.2 - 4.3, Android 2.1+
 	        box-shadow: $values;
 }
@@ -229,6 +253,32 @@
 	}
 }
 
+/**
+ * @description
+ * Generates `calc` function which allows mathematical expressions for a given property
+ *
+ * @author romamatusevich
+ *
+ * @link spec http://www.w3.org/TR/css3-values/#calc
+ * @link caniuse http://caniuse.com/calc
+ *
+ * @param property
+ * @param expression
+ *
+ * @returns
+ *    <property>: -webkit-calc(<expression>);
+ *    <property>: calc(<expression>);
+ *
+ * @example
+ *   .selector {
+ *     @include x-calc(width, "600px - 2em");
+ *   }
+ */
+@mixin x-calc ($property, $expression) {
+	#{$property}: -webkit-calc(#{$expression});
+	#{$property}: calc(#{$expression});
+}
+
 // Helper for old syntax in linear-gradients
 
 // Return the corrected angle or position for a css gradient
@@ -252,27 +302,27 @@
 	$veryold-direction: $direction;
 
 	// New Syntax has to be evaluated to old one
-	@if $direction == "to bottom" {
-		$old-direction: "top";
-	} @else if $direction == "to right" {
-		$old-direction: "left";
-	} @else if $direction == "to top" {
-		$old-direction: "bottom";
-	} @else if $direction == "to left" {
-		$old-direction: "right";
+	@if $direction == 'to bottom' {
+		$old-direction: 'top';
+	} @else if $direction == 'to right' {
+		$old-direction: 'left';
+	} @else if $direction == 'to top' {
+		$old-direction: 'bottom';
+	} @else if $direction == 'to left' {
+		$old-direction: 'right';
 	} @else {
 		$old-direction: angle($direction);
 	}
 
 	// And also for very old syntax
-	@if $direction == "to bottom" {
-		$veryold-direction: "left top, left bottom";
-	} @else if $direction == "to right" {
-		$veryold-direction: "top left, bottom right";
-	} @else if $direction == "to top" {
-		$veryold-direction: "left bottom, left top";
-	} @else if $direction == "to left" {
-		$veryold-direction: "top right, bottom left";
+	@if $direction == 'to bottom' {
+		$veryold-direction: 'left top, left bottom';
+	} @else if $direction == 'to right' {
+		$veryold-direction: 'top left, bottom right';
+	} @else if $direction == 'to top' {
+		$veryold-direction: 'left bottom, left top';
+	} @else if $direction == 'to left' {
+		$veryold-direction: 'top right, bottom left';
 	} @else {
 		$veryold-direction: angle($direction);
 	}
@@ -312,7 +362,7 @@
  * Note: By default this linear-gradient-mixin encourages people to use the
  * latest CSS-syntax for gradients.
  */
-@mixin x-linear-gradient ($direction: "to bottom", $fallback: #ccc, $from: #ccc, $to: #aaa) {
+@mixin x-linear-gradient ($direction: 'to bottom', $fallback: #ccc, $from: #ccc, $to: #aaa) {
 
 	$directions: helper-gradient-angle($direction);
 
@@ -716,7 +766,7 @@
  *     @include x-transition(background 0.3s ease-in);
  *   }
  */
-@mixin x-transition ($values) {
+@mixin x-transition ($values...) {
 	-webkit-transition: $values;
 	        transition: $values;
 }

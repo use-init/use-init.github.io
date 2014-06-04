@@ -6,9 +6,11 @@ Take what you need!
 
 * [animation](partials/_animation.scss)
 * [appearance](partials/_appearance.scss)
+* [background-size](partials/_background-size.scss)
 * [border-radius](partials/_border-radius.scss)
 * [box-shadow](partials/_box-shadow.scss)
 * [box-sizing](partials/_box-sizing.scss)
+* [calc](partials/_calc.scss)
 * [linear-gradient](partials/_linear-gradient.scss)
 * [multiple-backgrounds](partials/_multiple-backgrounds.scss)
 * [multiple-colored-gradient](partials/_multiple-colored-gradient.scss)
