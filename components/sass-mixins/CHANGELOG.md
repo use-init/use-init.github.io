@@ -2,6 +2,11 @@
 
 ### HEAD
 
+### 0.10.0 - 02.07.2014
+* Extend x-rem mixin to make it take px values and convert them to rem
+* Add strip-unit function to _rem.scss partial
+* Add flexbox mixins
+
 ### 0.9.0 - 03.05.2014
 * Add background-size mixin
 * Add multi values for transition mixin
