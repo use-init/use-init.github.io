@@ -16,11 +16,9 @@
 	"strict": true,
 	"trailing": true,
 	"smarttabs": true,
+	"jquery": true,
 
 	"globals": {
-		"jQuery": true,
-		"$": true,
-
 		"module": true,
 		"require": true,
 		"requirejs": true,
